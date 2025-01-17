@@ -36,9 +36,9 @@ class OrderService:
             # Apply discount if available
             if item.discount_type and item.discount_value is not None:
                 if item.discount_type == "percentage":
-                    discount_logic = PercentageDiscount(float(item.discount_value))
+                    discount_logic = PercentageDiscount(item.discount_value)
                 elif item.discount_type == "fixed":
-                    discount_logic = FixedAmountDiscount(float(item.discount_value))
+                    discount_logic = FixedAmountDiscount(item.discount_value)
                 else:
                     discount_logic = BaseDiscount()
 

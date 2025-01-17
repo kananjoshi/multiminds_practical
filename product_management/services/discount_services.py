@@ -20,7 +20,7 @@ class PercentageDiscount(BaseDiscount):
         self.discount_rate = discount_rate
 
     def apply_discount(self, total_price):
-        return total_price * (1 - self.discount_rate)
+        return total_price * (1 - self.discount_rate/100)
 
 
 class FixedAmountDiscount(BaseDiscount):
